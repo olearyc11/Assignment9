@@ -26,7 +26,7 @@ public class RecipeController {
 	public List<Recipe> gfRecipes() throws IOException {
 		List<Recipe> recipeList = recipeService.returnRecipes();
 		List<Recipe> gfList = recipeList.stream().filter(recipe -> recipe.getGlutenFree() != false)
-				.collect(Collectors.toList());
+												 .collect(Collectors.toList());
 		return gfList;
 	}
 
@@ -34,7 +34,7 @@ public class RecipeController {
 	public List<Recipe> veganRecipes() throws IOException {
 		List<Recipe> recipeList = recipeService.returnRecipes();
 		List<Recipe> veganList = recipeList.stream().filter(recipe -> recipe.getVegan() != false)
-				.collect(Collectors.toList());
+										   .collect(Collectors.toList());
 		return veganList;
 	}
 
@@ -42,8 +42,8 @@ public class RecipeController {
 	public List<Recipe> veganAndGF() throws IOException {
 		List<Recipe> recipeList = recipeService.returnRecipes();
 		List<Recipe> veganAndGF = recipeList.stream()
-				.filter(recipe -> recipe.getVegan() != false && recipe.getGlutenFree() != false)
-				.collect(Collectors.toList());
+											.filter(recipe -> recipe.getVegan() != false && recipe.getGlutenFree() != false)
+											.collect(Collectors.toList());
 		return veganAndGF;
 
 	}
@@ -52,7 +52,7 @@ public class RecipeController {
 	public List<Recipe> vegetatian() throws IOException {
 		List<Recipe> recipeList = recipeService.returnRecipes();
 		List<Recipe> vegetarianList = recipeList.stream().filter(recipe -> recipe.getVegetarian() != false)
-				.collect(Collectors.toList());
+												.collect(Collectors.toList());
 		return vegetarianList;
 	}
 }

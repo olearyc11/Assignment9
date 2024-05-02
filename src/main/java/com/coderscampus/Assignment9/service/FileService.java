@@ -21,8 +21,7 @@ public class FileService {
 		List<Recipe> recipes = new ArrayList<>();
 
 		Reader in = new FileReader("recipes.txt");
-		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withEscape('\\').withIgnoreSurroundingSpaces().withFirstRecordAsHeader()
-				.parse(in);
+		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withEscape('\\').withIgnoreSurroundingSpaces().withFirstRecordAsHeader().parse(in);
 		for (CSVRecord record : records) {
 			Integer cookingMin = Integer.parseInt(record.get("Cooking Minutes"));
 			Boolean dairyFree = Boolean.parseBoolean(record.get("Dairy Free"));
